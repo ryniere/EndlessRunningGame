@@ -34,6 +34,11 @@ function keyPressed() {
   }
 }
 
+function touchEnded() {
+    character.jump();
+    jumpSound.play();
+}
+
 function draw() {
   scenario.show();
   scenario.move();
