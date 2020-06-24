@@ -1,14 +1,21 @@
 class Animation {
 
-    constructor(matrix, image, x, animationWidth, animationHeight, spriteWidth, spriteHeight) {
-        this.matrix = matrix;
+    constructor(image, imageWidth, imageHeight, rows, columns, x) {
+        this.matrix = [];
+        this.spriteWidth = imageWidth / rows;
+        this.spriteHeight = imageHeight / columns;
         this.image = image;
-        this.width = animationWidth;
-        this.height = animationHeight;
+        this.width = this.spriteWidth / 2;
+        this.height = this.spriteHeight / 2;
         this.x = x;
         this.y  = height  - this.height;
-        this.spriteWidth = spriteWidth;
-        this.spriteHeight = spriteHeight;
+
+        for(let i = 0; i < columns; i++) {
+            for(let j = 0; j < rows; j++) {
+                this.matrix.push([j*this.spriteWidth, i*this.spriteHeight]);
+            }
+        }
+        
         this.currentFrame = 0;
     }
 

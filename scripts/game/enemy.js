@@ -1,7 +1,7 @@
 class Enemy extends Animation {
 
-    constructor(matrix, image, x, animationWidth, animationHeight, spriteWidth, spriteHeight) {
-        super(matrix, image, x, animationWidth, animationHeight, spriteWidth, spriteHeight);
+    constructor(image, imageWidth, imageHeight, rows, columns, x) {
+        super(image, imageWidth, imageHeight, rows, columns, x);
     }
 
     move() {
